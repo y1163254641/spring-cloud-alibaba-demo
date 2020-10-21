@@ -15,5 +15,11 @@
         sh shutdown.sh
 ### 开启服务（单机）
         bash startup.sh -m standalone
-        
-
+### 开启服务（集群）
+        路径：/nacos/distribution/target/nacos-server-1.4.0-SNAPSHOT/nacos/conf下
+        文件application.properties配置mysql相关信息（目前只能用mysql数据库）
+        新建cluster.conf文件，内容如下：
+                #ip:port
+                111.111.0.11:8848
+                222.222.0.22:8848
+        启动命令：sh startup.sh

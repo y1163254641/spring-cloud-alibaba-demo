@@ -29,6 +29,6 @@ public class ProviderController {
 
   @RequestMapping("/test/{id}")
   public String getMsg(@PathVariable Integer id) {
-    return "msg "+ id + " >> " + ctx.getEnvironment().getProperty("server.port");
+    return "msg "+ id + " >> " + ctx.getEnvironment().getProperty("spring.application.name");
   }
 }
