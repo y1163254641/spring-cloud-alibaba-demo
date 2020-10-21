@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: alibaba-cloud-feign
+  cloud:
+    nacos:
+      config:
+        file-extension: yaml
+        server-addr: 127.0.0.1:8848
+        namespace: a9046257-90ee-4fbc-ae3d-8cecc2dbc932
