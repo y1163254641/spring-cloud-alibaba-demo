@@ -18,6 +18,7 @@
 ### 开启服务（集群）
         路径：/nacos/distribution/target/nacos-server-1.4.0-SNAPSHOT/nacos/conf下
         文件application.properties配置mysql相关信息（目前只能用mysql数据库）
+        在mysql中运行nacos-mysql.sql文件
         新建cluster.conf文件，内容如下：
                 #ip:port
                 111.111.0.11:8848
