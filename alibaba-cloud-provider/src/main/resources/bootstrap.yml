@@ -3,6 +3,9 @@ spring:
     name: alibaba-cloud-provider
   cloud:
     nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+        namespace: 66b1e88d-4935-4f81-b948-7a492f794d7c
       config:
         file-extension: yaml
         server-addr: 127.0.0.1:8848

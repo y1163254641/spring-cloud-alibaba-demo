@@ -28,20 +28,9 @@
 ### 服务注册
         data id：
           由{spring.application.name}-{spring.profiles.active}.{spring.cloud.nacos.config.file-extension}组成
-        配置内容（注册discovery，例）：
-        server:
-          port: 10000
-        spring:
-          profiles:
-            active:
-              - dev
-          application:
-            name: alibaba-cloud-provider
-          cloud:
-            nacos:
-              discovery:
-                server-addr: 127.0.0.1:8848
-                namespace: 66b1e88d-4935-4f81-b948-7a492f794d7c
+        配置内容（例）：
+          server:
+            port: 10000
         openFeign：
           @FeignClient(name = "alibaba-cloud-provider")
           name为provider的{spring.application.name}
