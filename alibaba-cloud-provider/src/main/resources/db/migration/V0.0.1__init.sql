@@ -1,0 +1,4 @@
+CREATE TABLE test (
+	id INT8 not null AUTO_INCREMENT PRIMARY KEY,
+	name VARCHAR ( 50 ) NOT NULL
+);
