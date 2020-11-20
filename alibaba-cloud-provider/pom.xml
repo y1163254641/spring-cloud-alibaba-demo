@@ -18,6 +18,7 @@
     <properties>
         <mybatis-plus.version>3.3.1</mybatis-plus.version>
         <druid.version>1.1.22</druid.version>
+        <dynamic.version>2.5.4</dynamic.version>
     </properties>
 
     <dependencies>
@@ -67,6 +68,11 @@
         <dependency>
             <groupId>org.flywaydb</groupId>
             <artifactId>flyway-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>dynamic-datasource-spring-boot-starter</artifactId>
+            <version>${dynamic.version}</version>
         </dependency>
     </dependencies>
 

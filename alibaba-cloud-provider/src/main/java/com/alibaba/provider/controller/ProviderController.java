@@ -1,16 +1,12 @@
 package com.alibaba.provider.controller;
 
-import com.alibaba.provider.model.TestModel;
-import com.alibaba.provider.service.TestService;
+import com.alibaba.provider.service.master.MasterTestService;
+import com.alibaba.provider.service.slave.SlaveTestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.context.ConfigurableApplicationContext;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
-import java.util.List;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/provider")
@@ -24,7 +20,10 @@ public class ProviderController {
   private String port;
 
   @Autowired
-  private TestService testService;
+  private MasterTestService masterTestService;
+
+  @Autowired
+  private SlaveTestService slaveTestService;
 
   @Autowired
   private ConfigurableApplicationContext ctx;
@@ -34,8 +33,14 @@ public class ProviderController {
     return name + "生产者" + port;
   }
 
-  @RequestMapping("/test/{id}")
-  public String getMsg(@PathVariable Integer id) {
-    return testService.list().toString() + "------->" + id;
+  @GetMapping("/test/{id}")
+  public String queryTest(@PathVariable Integer id) {
+    return slaveTestService.list().toString() + "------->" + id;
+  }
+
+
+  @DeleteMapping("/test/{id}")
+  public String deleteTest(@PathVariable Integer id) {
+    return masterTestService.removeById(id) + "------->" + id;
   }
 }

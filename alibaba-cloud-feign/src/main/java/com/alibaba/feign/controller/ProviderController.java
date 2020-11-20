@@ -12,7 +12,12 @@ public class ProviderController implements ProviderFeign {
 
 
   @Override
-  public String getMsg(Integer id) {
-    return "frontend: " + providerFeign.getMsg(id);
+  public String queryTest(Integer id) {
+    return "query: " + providerFeign.queryTest(id);
+  }
+
+  @Override
+  public String deleteTest(Integer id) {
+    return "delete: " + providerFeign.deleteTest(id);
   }
 }

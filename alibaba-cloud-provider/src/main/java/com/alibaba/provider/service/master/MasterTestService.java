@@ -1,4 +1,5 @@
-package com.alibaba.provider.service;
+package com.alibaba.provider.service.master;
+
 
 import com.alibaba.provider.model.TestModel;
 import com.baomidou.mybatisplus.extension.service.IService;
@@ -7,5 +8,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  *
  * @author yanggongming
  */
-public interface TestService extends IService<TestModel> {
+public interface MasterTestService extends IService<TestModel> {
 }

@@ -1,11 +1,23 @@
 spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
-    druid:
-      url: jdbc:mysql://127.0.0.1:3306/test?setUnicode=true&characterEncoding=utf8&useSSL=false&allowMultiQueries=true
-      username: root
-      password: root123456
-      driver-class-name: com.mysql.jdbc.Driver
+    dynamic:
+      primary: master
+      datasource:
+        master:
+          url: jdbc:mysql://127.0.0.1:3306/test?setUnicode=true&characterEncoding=utf8&useSSL=false&allowMultiQueries=true
+          username: root
+          password: root123456
+          driver-class-name: com.mysql.jdbc.Driver
+        #          schema: db/migration/V20201113__mi05_mi17.sql # 配置则生效,自动初始化表结构
+        #          data: db/migration/V20201113__mi05_mi17.sql # 配置则生效,自动初始化数据
+        #          continue-on-error: false # 默认true,初始化失败是否继续
+        #          separator: ";" # sql默认分号分隔符
+        slave:
+          url: jdbc:mysql://127.0.0.1:3306/slave?setUnicode=true&characterEncoding=utf8&useSSL=false&allowMultiQueries=true
+          username: root
+          password: root123456
+          driver-class-name: com.mysql.jdbc.Driver
   flyway:
     baseline-on-migrate: true
     clean-on-validation-error: false
