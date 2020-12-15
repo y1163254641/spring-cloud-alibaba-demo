@@ -252,3 +252,5 @@
 ### 当前版本nacos + sentinel持久化实现注意
         1、Sentinel控制台中修改规则，仅是内存中⽣效，不会修改Nacos中的配置值，重启后恢复原来的值。
         2、Nacos控制台中修改规则，不仅内存中⽣效，Nacos中持久化规则也⽣效，重启后规则依然保持。
+        
+        更多细节请查看：https://github.com/alibaba/Sentinel/wiki
