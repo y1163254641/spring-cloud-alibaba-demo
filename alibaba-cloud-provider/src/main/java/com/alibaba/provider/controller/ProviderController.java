@@ -38,6 +38,11 @@ public class ProviderController {
     return slaveTestService.list().toString() + "------->" + id;
   }
 
+  @GetMapping("/test2/{id}")
+  public String queryTest2(@PathVariable Integer id) {
+    return slaveTestService.list().toString() + "------->" + id;
+  }
+
 
   @DeleteMapping("/test/{id}")
   public String deleteTest(@PathVariable Integer id) {
