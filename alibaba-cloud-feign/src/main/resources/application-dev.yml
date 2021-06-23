@@ -1,0 +1,3 @@
+feign:
+  sentinel:
+    enabled: true

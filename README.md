@@ -5,7 +5,7 @@
 ### 安装
         git clone https://github.com/alibaba/nacos.git
         cd nacos/
-        mvn -Prelease-nacos -Dmaven.test.skip=true clean install -U  
+        mvn -Prelease-nacos -Dmaven.test.skip -Drat.skip=true clean install -U 
         ls -al distribution/target/
         修改$version字段，改成你对应的版本号
         cd distribution/target/nacos-server-$version/nacos/bin
@@ -173,10 +173,10 @@
             // private DynamicRulePublisher<List<FlowRuleEntity>> rulePublisher;
         
             @Autowired
-            @Qualifier("flowRule**Nacos**Provider")
+            @Qualifier("flowRuleNacosProvider")
             private DynamicRuleProvider<List<FlowRuleEntity>> ruleProvider;
             @Autowired
-            @Qualifier("flowRule**Nacos**Publisher")
+            @Qualifier("flowRuleNacosPublisher")
             private DynamicRulePublisher<List<FlowRuleEntity>> rulePublisher;
             
         修改/Sentinel-1.7.2/sentinel-dashboard/src/main/webapp/resources/app/scripts/directives/sidebar/sidebar.html

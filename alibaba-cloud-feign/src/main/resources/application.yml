@@ -1,3 +1,4 @@
-feign:
-  sentinel:
-    enabled: true
+spring:
+  profiles:
+    active:
+      - dev
